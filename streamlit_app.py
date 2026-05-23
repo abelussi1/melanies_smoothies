@@ -9,7 +9,8 @@ import streamlit as st
 import os
 
 from snowflake.snowpark.functions import col
-from snowflake.snowpark.context import get_active_session
+dnx = st.connection("snowflake")
+session = cnx.session()
 
 session = get_active_session()
 
