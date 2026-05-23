@@ -9,7 +9,7 @@ import streamlit as st
 import os
 
 from snowflake.snowpark.functions import col
-dnx = st.connection("snowflake")
+cnx = st.connection("snowflake")
 session = cnx.session()
 
 # Write directly to the app
