@@ -7,6 +7,7 @@
 # Import python packages
 import streamlit as st
 import os
+import requests
 
 from snowflake.snowpark.functions import col
 cnx = st.connection("snowflake")
@@ -30,6 +31,9 @@ ingredients_list = st.multiselect(
     , my_dataframe
     , max_selections=5
 )
+
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 # display the ingredients_list IF the ingredients_list exists
 if ingredients_list: 
