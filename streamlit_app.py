@@ -12,8 +12,6 @@ from snowflake.snowpark.functions import col
 dnx = st.connection("snowflake")
 session = cnx.session()
 
-session = get_active_session()
-
 # Write directly to the app
 st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 st.write(
